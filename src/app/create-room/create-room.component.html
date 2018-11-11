@@ -1,0 +1,32 @@
+<h2>New chat room</h2>
+<p class="text-muted">
+  Every time you create a new room a new <app-first-key-label></app-first-key-label> is generated.<br>
+</p>
+
+<form>
+  <fieldset>
+    <legend>Keys:</legend>
+
+    <!-- FIRST KEY -->
+    <div class="form-group" [hidden]="!showFirstKeyComponent">
+      <label for="exampleTextarea">Share this <app-first-key-label></app-first-key-label> with your partner</label>
+      <app-key #firstKeyComponent></app-key>
+
+      <button type="submit" class="btn btn-outline-primary button-space" (click)="onFirstKeyHasBeenShared()">I have just shared</button>
+    </div>
+
+    <!-- SECOND KEY -->
+    <div class="form-group" [hidden]="!showSecondKeyComponent">
+      <label for="exampleTextarea">Enter the <app-second-key-label></app-second-key-label> created by your partner</label>
+      <app-key #secondKeyComponent [hidden]="!showSecondKeyComponent"></app-key>
+
+      <button type="submit" class="btn btn-outline-primary button-space" (click)="onSecondKeyIsEntered()" [hidden]="!showSecondKeyComponent">Enter to the room</button>
+    </div>
+
+  </fieldset>
+</form>
+
+
+<app-loading [hidden]="!showLoading" [message]="loadingMessage"></app-loading>
+<app-error-message [hidden]="!showError" [message]="errorMessage"></app-error-message>
+<app-warning-message [hidden]="!showWarning" [message]="warningMessage"></app-warning-message>

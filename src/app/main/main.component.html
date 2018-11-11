@@ -1,0 +1,28 @@
+<h2>Black Door Chat
+  <footer class="blockquote-footer">Real p2p server less <cite title="Source Title">chat room</cite></footer>
+</h2>
+
+<div class="card mb-3">
+  <div class="card-header">How does it work?</div>
+  <div class="card-body">
+    <p class="card-text">
+      Every time you create a chat room an unique <app-first-key-label></app-first-key-label> is generated.<br>
+      To enter in a room, two keys are required.<br>
+      After you share a first key, your partner will generate the <app-second-key-label></app-second-key-label> for this specific room.<br>
+      With both keys, you will complete the authentication process and you can enter in the chat room.
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <span>Create a chat room</span>
+      <button type="button" class="btn btn-primary button-space" (click)="onCreateNewRoom()">New chat room</button>
+    </div>
+    <div class="col">
+      <span>I got the  <app-first-key-label></app-first-key-label></span>
+      <button type="button" class="btn btn-outline-primary button-space" (click)="onJoinAnExistingRoom()">Join a chat room</button>
+    </div>
+  </div>
+</div>

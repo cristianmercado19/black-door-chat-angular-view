@@ -1,0 +1,40 @@
+<h2>Join a chat room</h2>
+<p class="text-muted">
+  Please, enter the <app-first-key-label></app-first-key-label> created by your partner. After that, a <app-second-key-label></app-second-key-label> will
+  be generated.
+</p>
+
+
+
+<form>
+  <fieldset>
+    <legend>Keys</legend>
+
+    <div class="form-group" [hidden]="!showFirstKeyComponent">
+      <label for="exampleTextarea"><app-first-key-label></app-first-key-label></label>
+      <app-key #firstKeyComponent [hidden]="!showFirstKeyComponent"></app-key>
+
+      <button type="submit" class="btn btn-outline-primary button-space" (click)="onFirstKeyHasBeenEntered()">Check First Key</button>
+    </div>
+
+    <div class="form-group" [hidden]="!showSecondKeyComponent">
+      <label for="exampleTextarea"><app-second-key-label></app-second-key-label></label>
+      <app-key #secondKeyComponent [hidden]="!showSecondKeyComponent"></app-key>
+      
+      <div *ngIf="showNextStepInstructions">
+        <p class="text-success">
+          Now, share the <app-second-key-label></app-second-key-label> and wait until your partner enter to the room.
+        </p>
+        <p class="text-info">
+          You will be automatically redirected to the room.
+        </p>
+      </div>
+
+    </div>
+
+  </fieldset>
+</form>
+
+<app-error-message [hidden]="!showError" [message]="errorMessage"></app-error-message>
+<app-warning-message [hidden]="!showWarning" [message]="warningMessage"></app-warning-message>
+<app-loading [hidden]="!showLoading" [message]="loadingMessage"></app-loading>
