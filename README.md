@@ -2,6 +2,10 @@
 
 Where this project coming from? [Black Door Chat Project Introduction](https://github.com/cristianmercado19/black-door-chat).
 
+## Demo
+
+Although no host is required, I have deployed this client in: [http://black-door-chat.smart-bricks.net](http://black-door-chat.smart-bricks.net).
+
 ## Expectation
 
 The most simplistic and minimum UI implementation. Of course, driven by the controller... because I do not expect any complex logic in the View.
